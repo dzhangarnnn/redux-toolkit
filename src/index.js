@@ -10,7 +10,8 @@ import {
 	taskDeleted,
 	titleChanged,
 	loadTasks,
-	getTasksLoadingStatus
+	getTasksLoadingStatus,
+	createTask
 } from "./store/task";
 
 const store = configureStore();
@@ -42,6 +43,9 @@ const App = (params) => {
 			<h1>App</h1>
 
 			<ul>
+				<button onClick={() => dispatch(createTask())}>
+					Create task
+				</button>
 				{state.map((el) => (
 					<li key={el.id}>
 						<p>{el.title}</p>
